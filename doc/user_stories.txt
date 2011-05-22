@@ -1,11 +1,11 @@
 _wip_
- - print help text if --help is passed in as an option
  - define destination directory
    - create destination directory if it doesn't exist
 
 
 _done_
  - copy full jasmine test directories from source to current directory
+ - print help text if --help is passed in as an option
 
 _backlog_
  - define jasmine lib source directory
