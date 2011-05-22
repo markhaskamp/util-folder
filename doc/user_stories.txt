@@ -7,6 +7,7 @@ _done_
  copy full jasmine test directories from source to current directory
 
 _backlog_
- define jasmine lib source directory
- copy stripped down version of jasmine source to destination
- debug option that only prints the final command, program does not run it.
+ - define jasmine lib source directory
+ - copy stripped down version of jasmine source to destination
+ - debug option that only prints the final command, program does not run it.
+ - print help text if --help is passed in as an option
