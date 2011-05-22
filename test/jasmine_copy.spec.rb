@@ -26,7 +26,7 @@ describe "Command_Class" do
 
   it "when --help is defined, copy command is not executed" do
     cmd = flexmock(Command_Class.new(Jasmine_Lib.new))
-    cmd.should_receive(:do_copy).never
+    cmd.should_receive(:copy_command).never
 
     cmd.help = true
     cmd.execute
@@ -34,7 +34,7 @@ describe "Command_Class" do
 
   it "when --help is not defined, copy command is executed" do
     cmd = flexmock(Command_Class.new(Jasmine_Lib.new))
-    cmd.should_receive(:do_copy).once
+    cmd.should_receive(:copy_command).once
 
     cmd.execute
   end
@@ -44,6 +44,22 @@ describe "Command_Class" do
     cmd.target = "foo"
 
     cmd.build_command_stmt.should == "cp -R ~/dev/lib/jasmine foo"
+  end
+
+  it "when --dry-run is defined, copy command is not executed" do
+    cmd = flexmock(Command_Class.new(Jasmine_Lib.new))
+    cmd.should_receive(:copy_command).never
+
+    cmd.dry_run = true
+    cmd.execute
+  end
+
+  it "when --dry-run is defined, copy command is defined" do
+    cmd = Command_Class.new(Jasmine_Lib.new)
+    cmd.dry_run = true
+    cmd.execute
+
+    cmd.cmd.should == 'cp -R ~/dev/lib/jasmine .'
   end
 end
 

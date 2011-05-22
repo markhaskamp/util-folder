@@ -1,8 +1,11 @@
 class Command_Class
-  attr_accessor :help, :target
+  attr_accessor :help, :target, :dry_run
   attr_reader :cmd
 
   def initialize jasmine_lib
+    @help = false
+    @dry_run = false
+
     @target = '.'
     @jasmine_lib = jasmine_lib
   end
@@ -10,8 +13,12 @@ class Command_Class
   def execute
     build_command_stmt
 
-    if (@help == nil)
-      do_copy
+    if (@help == false)
+      if (@dry_run)
+        puts "cmd: #{@cmd}";
+      else
+        copy_command
+      end
     end
   end
 
@@ -19,8 +26,8 @@ class Command_Class
     @cmd = "cp -R #{@jasmine_lib.src} #{@target}"
   end
 
-  def do_copy
-    puts "cmd: #{@cmd}";
+  def copy_command
+    puts "execute!"
     # `cp -R #{dir} .`
   end
 end
