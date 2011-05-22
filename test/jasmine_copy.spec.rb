@@ -1,4 +1,5 @@
 require 'rspec'
+require File.dirname(__FILE__) + '/../lib/jasmine_libs.rb'
 
 RSpec.configure do |config|
   config.mock_with :flexmock
@@ -11,3 +12,8 @@ describe "Using FlexMock with RSpec" do
   end
 end
 
+describe "Jasmine_Lib" do
+  it "default destination directory is '.'" do
+    Jasmine_Lib.new.dir_destination.should == '.'
+  end
+end

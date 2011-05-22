@@ -9,3 +9,4 @@ _done_
 _backlog_
  define jasmine lib source directory
  copy stripped down version of jasmine source to destination
+ debug option that only prints the final command, program does not run it.
