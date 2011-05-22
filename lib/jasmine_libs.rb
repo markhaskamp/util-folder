@@ -9,8 +9,17 @@ class Jasmine_Lib
 end
 
 class Command_Class
-  def copy_lib dir
-    `cp -R #{dir} .`
+  attr_accessor :help
+
+  def execute dir
+    if (@help == nil)
+      do_copy
+    end
+  end
+
+  def do_copy
+    puts "copying..."
+    # `cp -R #{dir} .`
   end
 end
 

@@ -17,8 +17,12 @@ describe "Jasmine_Lib" do
     Jasmine_Lib.new.dir_destination.should == '.'
   end
 
-  it "when --help is defined, command is not executed" do
-    true.should == false
+  it "when --help is defined, copy command is not executed" do
+    cmd = flexmock(Command_Class.new)
+    cmd.should_receive(:do_copy).never
+
+    cmd.help = true
+    cmd.execute Jasmine_Lib.new.loc
   end
 end
 
