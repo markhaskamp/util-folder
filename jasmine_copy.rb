@@ -5,7 +5,6 @@ require File.dirname(__FILE__) + '/lib/Jasmine_Lib.rb'
 require 'getoptlong'
 opts = GetoptLong.new(
   ['--help', '-h', GetoptLong::NO_ARGUMENT],
-  ['--target', '-t', GetoptLong::REQUIRED_ARGUMENT],
   ['--dry-run', GetoptLong::NO_ARGUMENT],
 )
 
@@ -15,11 +14,11 @@ opts.each do |opt, arg|
   case opt
     when '--help'
       puts  <<EOF
+jasmine_copy.rb
+  Copies the Jasmine/bdd files from source directory to the current directory
+
 -h, --help:
   show help
-
--t, --target:
-  define the target directory. default is '.'
 
 --dry-run
   print the command, do NOT execute the command
@@ -27,9 +26,6 @@ opts.each do |opt, arg|
 EOF
 
       exit(0)
-
-    when '--target'
-      cmd.target = arg
 
     when '--dry-run'
       cmd.dry_run = true

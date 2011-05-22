@@ -1,10 +1,10 @@
 _wip_
- - --dry-run option that only prints the final command, program does not run it.
  * define target directory
    - create target directory if it doesn't exist
 
 
 _done_
+ * --dry-run option that only prints the final command, program does not run it.
  * copy full jasmine test directories from source to current directory
  * print help text if --help is passed in as an option
 

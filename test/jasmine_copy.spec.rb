@@ -40,10 +40,15 @@ describe "Command_Class" do
   end
 
   it "--target cmd line option redefines the target directory" do
+    new_target_dir = "foo"
+    Dir.rmdir(new_target_dir) if Dir.exists?(new_target_dir)
+
     cmd = Command_Class.new Jasmine_Lib.new
     cmd.target = "foo"
 
     cmd.build_command_stmt.should == "cp -R ~/dev/lib/jasmine foo"
+
+    Dir.rmdir(new_target_dir) if Dir.exists?(new_target_dir)
   end
 
   it "when --dry-run is defined, copy command is not executed" do
@@ -60,6 +65,20 @@ describe "Command_Class" do
     cmd.execute
 
     cmd.cmd.should == 'cp -R ~/dev/lib/jasmine .'
+  end
+  
+  it "will create target directory if it does not exist" do
+    true.should == false
+    # target_dir = '~/tmp/doesnt_exist'
+    # Dir.rmdir(target_dir) if Dir.exists?(target_dir)
+
+    # cmd = flexmock(Command_Class.new(Jasmine_Lib.new))
+    # cmd.target = target_dir
+    # cmd.should_receive(:create_target_dir).with(target_dir).once
+
+    # cmd.execute
+
+    # Dir.rmdir(target_dir) if Dir.exists?(target_dir)
   end
 end
 

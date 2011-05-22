@@ -11,9 +11,9 @@ class Command_Class
   end
 
   def execute
-    build_command_stmt
 
     if (@help == false)
+      build_command_stmt
       if (@dry_run)
         puts "cmd: #{@cmd}";
       else
@@ -23,12 +23,19 @@ class Command_Class
   end
 
   def build_command_stmt
+    if (@dry_run == false) 
+      create_target_dir(@target) unless (Dir.exists?(@target))
+    end
+
     @cmd = "cp -R #{@jasmine_lib.src} #{@target}"
   end
 
   def copy_command
-    puts "execute!"
-    # `cp -R #{dir} .`
+    `#{@cmd}`
+  end
+
+  def create_target_dir target
+    Dir.mkdir target
   end
 end
 
