@@ -1,5 +1,5 @@
 # copies the dev/lib Selenium directories to current test/selenium directory
-#
+
 class Jasmine_Lib
   attr_accessor :loc
 
