@@ -16,4 +16,9 @@ describe "Jasmine_Lib" do
   it "default destination directory is '.'" do
     Jasmine_Lib.new.dir_destination.should == '.'
   end
+
+  it "when --help is defined, command is not executed" do
+    true.should == false
+  end
 end
+
