@@ -1,14 +1,14 @@
 _wip_
- - define target directory
+ - --dry-run option that only prints the final command, program does not run it.
+ * define target directory
    - create target directory if it doesn't exist
 
 
 _done_
- - copy full jasmine test directories from source to current directory
- - print help text if --help is passed in as an option
+ * copy full jasmine test directories from source to current directory
+ * print help text if --help is passed in as an option
 
 _backlog_
  - define jasmine lib source directory
  - copy stripped down version of jasmine source to target directory
- - debug option that only prints the final command, program does not run it.
- - get rid of flexmoc, run tests against Command_Class.cmd variable
+ - get rid of flexmock, run tests against Command_Class.cmd variable
