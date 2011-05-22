@@ -16,7 +16,7 @@ class Command_Class
   end
 
   def build_command_stmt
-    @cmd = "cp -R #{@jasmine_lib.src} ."
+    @cmd = "cp -R #{@jasmine_lib.src} #{@target}"
   end
 
   def do_copy

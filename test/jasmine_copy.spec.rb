@@ -43,7 +43,7 @@ describe "Command_Class" do
     cmd = Command_Class.new Jasmine_Lib.new
     cmd.target = "foo"
 
-    cmd.build_command_stmt.should == "cp -R ~/dev/lib/jasmine ."
+    cmd.build_command_stmt.should == "cp -R ~/dev/lib/jasmine foo"
   end
 end
 

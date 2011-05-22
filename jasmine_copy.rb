@@ -4,7 +4,8 @@ require File.dirname(__FILE__) + '/lib/Command_Class.rb'
 require File.dirname(__FILE__) + '/lib/Jasmine_Lib.rb'
 require 'getoptlong'
 opts = GetoptLong.new(
-  ['--help', '-h', GetoptLong::NO_ARGUMENT]
+  ['--help', '-h', GetoptLong::NO_ARGUMENT],
+  ['--target', '-t', GetoptLong::REQUIRED_ARGUMENT]
 )
 
 cmd = Command_Class.new(Jasmine_Lib.new)
