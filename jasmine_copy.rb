@@ -1,12 +1,13 @@
 # copies the dev/lib Selenium directories to current test/selenium directory
 
 require File.dirname(__FILE__) + '/lib/Command_Class.rb'
+require File.dirname(__FILE__) + '/lib/Jasmine_Lib.rb'
 require 'getoptlong'
 opts = GetoptLong.new(
   ['--help', '-h', GetoptLong::NO_ARGUMENT]
 )
 
-cmd = Command_Class.new
+cmd = Command_Class.new(Jasmine_Lib.new)
 
 opts.each do |opt, arg|
   case opt
