@@ -1,5 +1,5 @@
 require 'rspec'
-require File.dirname(__FILE__) + '/../lib/jasmine_libs.rb'
+require File.dirname(__FILE__) + '/../lib/Command_Class.rb'
 
 RSpec.configure do |config|
   config.mock_with :flexmock

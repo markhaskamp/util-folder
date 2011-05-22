@@ -6,7 +6,7 @@ class Command_Class
     @target = '.'
   end
 
-  def execute dir
+  def execute
     if (@help == nil)
       do_copy
     end
