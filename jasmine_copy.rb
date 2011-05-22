@@ -20,6 +20,4 @@ EOF
 end
 
 cmd = Command_Class.new
-lib = Jasmine_Lib.new
-
-cmd.copy_lib lib.loc
+cmd.execute

@@ -12,9 +12,9 @@ describe "Using FlexMock with RSpec" do
   end
 end
 
-describe "Jasmine_Lib" do
+describe "Command_Class" do
   it "default destination directory is '.'" do
-    Jasmine_Lib.new.dir_destination.should == '.'
+    Command_Class.new.target.should == '.'
   end
 
   it "when --help is defined, copy command is not executed" do
@@ -22,14 +22,14 @@ describe "Jasmine_Lib" do
     cmd.should_receive(:do_copy).never
 
     cmd.help = true
-    cmd.execute Jasmine_Lib.new.loc
+    cmd.execute
   end
 
   it "when --help is not defined, copy command is executed" do
     cmd = flexmock(Command_Class.new)
     cmd.should_receive(:do_copy).once
 
-    cmd.execute Jasmine_Lib.new.loc
+    cmd.execute
   end
 end
 

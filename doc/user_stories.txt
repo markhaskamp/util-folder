@@ -1,6 +1,6 @@
 _wip_
- - define destination directory
-   - create destination directory if it doesn't exist
+ - define target directory
+   - create target directory if it doesn't exist
 
 
 _done_
@@ -9,5 +9,6 @@ _done_
 
 _backlog_
  - define jasmine lib source directory
- - copy stripped down version of jasmine source to destination
+ - copy stripped down version of jasmine source to target directory
  - debug option that only prints the final command, program does not run it.
+ - get rid of flexmoc, run tests against Command_Class.cmd variable
